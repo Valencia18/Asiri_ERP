@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +51,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AsiriContext.cs" />
+    <Compile Include="Model\Clinica\CLIt01_anamnesis.cs" />
+    <Compile Include="Model\Clinica\CLIt02_archivoEstudioCompl.cs" />
+    <Compile Include="Model\Clinica\CLlt03_atencion.cs" />
+    <Compile Include="Model\Clinica\CLlt04_cie10.cs" />
+    <Compile Include="Model\Clinica\CLlt05_cita.cs" />
+    <Compile Include="Model\Clinica\CLlt06_citaDtl.cs" />
+    <Compile Include="Model\Clinica\CLlt07_consultorio.cs" />
+    <Compile Include="Model\Clinica\CLlt08_diagnostico.cs" />
+    <Compile Include="Model\Clinica\CLlt09_estadoCita.cs" />
+    <Compile Include="Model\Clinica\CLlt10_estudioCompl.cs" />
+    <Compile Include="Model\Clinica\CLlt11_evolucion.cs" />
+    <Compile Include="Model\Clinica\CLlt12_examenFisico.cs" />
+    <Compile Include="Model\Clinica\CLlt13_funcionVital.cs" />
+    <Compile Include="Model\Clinica\CLlt14_seguro.cs" />
+    <Compile Include="Model\Clinica\CLlt15_seguroPaciente.cs" />
+    <Compile Include="Model\Clinica\CLlt16_tratamiento.cs" />
+    <Compile Include="Model\Clinica\CLlt17_tratamientoDtl.cs" />
+    <Compile Include="Model\Maestro\MSTt01_medioDePago.cs" />
+    <Compile Include="Model\Maestro\MSTt02_piso.cs" />
+    <Compile Include="Model\Maestro\MSTt03_redSocial.cs" />
+    <Compile Include="Model\Maestro\MSTt04_sucursal.cs" />
+    <Compile Include="Model\Maestro\MSTt05_tipoSucursal.cs" />
+    <Compile Include="Model\Producto\PROt01_categoria.cs" />
+    <Compile Include="Model\Producto\PROt02_producto.cs" />
+    <Compile Include="Model\Producto\PROt03_productoUnidadDeMedida.cs" />
+    <Compile Include="Model\Producto\PROt04_servicio.cs" />
+    <Compile Include="Model\Producto\PROt05_tipoDeServicio.cs" />
+    <Compile Include="Model\Producto\PROt06_unidadDeMedida.cs" />
+    <Compile Include="Model\RRHH\RHUt01_empleado.cs" />
+    <Compile Include="Model\RRHH\RHUt02_empleadoEspecialidad.cs" />
+    <Compile Include="Model\RRHH\RHUt03_empleadoTurno.cs" />
+    <Compile Include="Model\RRHH\RHUt04_especialidad.cs" />
+    <Compile Include="Model\RRHH\RHUt05_estadoCivil.cs" />
+    <Compile Include="Model\RRHH\RHUt06_horario.cs" />
+    <Compile Include="Model\RRHH\RHUt07_paciente.cs" />
+    <Compile Include="Model\RRHH\RHUt08_periodoRemuneracion.cs" />
+    <Compile Include="Model\RRHH\RHUt09_persona.cs" />
+    <Compile Include="Model\RRHH\RHUt10_personaRedSocial.cs" />
+    <Compile Include="Model\RRHH\RHUt11_tipoDeEmpleado.cs" />
+    <Compile Include="Model\RRHH\RHUt12_tipoDocIdentidad.cs" />
+    <Compile Include="Model\RRHH\RHUt13_tipoEspecialidad.cs" />
+    <Compile Include="Model\RRHH\RHUt14_turno.cs" />
+    <Compile Include="Model\Sistema\SISt01_parametro.cs" />
+    <Compile Include="Model\Sunat\SNTt01_entidadFinanciera.cs" />
+    <Compile Include="Model\Sunat\SNTt02_impuesto.cs" />
+    <Compile Include="Model\Sunat\SNTt03_moneda.cs" />
+    <Compile Include="Model\Sunat\SNTt04_tipoComprobante.cs" />
+    <Compile Include="Model\Sunat\SNTt05_tipoMedioDePago.cs" />
+    <Compile Include="Model\Transaccion\TNSt01_comprobanteEmitido.cs" />
+    <Compile Include="Model\Transaccion\TNSt02_comprobanteEmitidoDtl.cs" />
+    <Compile Include="Model\Transaccion\TNSt03_cuota.cs" />
+    <Compile Include="Model\Transaccion\TNSt04_estadoComprobante.cs" />
+    <Compile Include="Model\Transaccion\TNSt05_estadoDeCuenta.cs" />
+    <Compile Include="Model\Transaccion\TNSt06_medioDePagoDtl.cs" />
+    <Compile Include="Model\Ubigeo\UBIt01_distrito.cs" />
+    <Compile Include="Model\Ubigeo\UBIt02_provincia.cs" />
+    <Compile Include="Model\Ubigeo\UBIt03_region.cs" />
+    <Compile Include="Model\Ubigeo\UBIt04_via.cs" />
+    <Compile Include="Model\Ubigeo\UBIt05_zona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
