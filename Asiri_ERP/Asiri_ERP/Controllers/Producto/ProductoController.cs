@@ -10,7 +10,7 @@ using Common.Helper;
 using Common.Model;
 using Service.Producto;
 
-namespace AsiriERP.Controllers.Producto
+namespace Asiri_ERP.Controllers.Producto
 {
     public class ProductoController : Controller
     {
