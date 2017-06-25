@@ -15,7 +15,7 @@ namespace Asiri_ERP.Controllers.RRHH
 {
     public class PersonaController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private AsiriContext db = new AsiriContext();
 
         // GET: Persona
         public ActionResult Index()
@@ -102,7 +102,7 @@ namespace Asiri_ERP.Controllers.RRHH
                 
 
                 //SELECT REGION
-                ViewBag.idRegion = new SelectList(db., "idRegion", "nombreRegion");
+                //ViewBag.idRegion = new SelectList(db., "idRegion", "nombreRegion");
                 //SELECT PROVINCIA
                 //ViewBag.idProvincia = new SelectList(db.UBIt02_provincia, "idProvincia", "nombreProvincia");
                 List<SelectListItem> provs = new List<SelectListItem>();
@@ -233,7 +233,7 @@ namespace Asiri_ERP.Controllers.RRHH
             var idDistrito = objPersona.idDistrito;
             if (idRegionFind > 0)
             {
-                ViewBag.idRegion = new SelectList(db., "idRegion", "nombreRegion", idRegion);
+                //ViewBag.idRegion = new SelectList(db., "idRegion", "nombreRegion", idRegion);
                 if (idProvinciaFind > 0)
                 {
                     ViewBag.idProvincia = new SelectList(db.UBIt02_provincia, "idProvincia", "nombreProvincia", idProvinciaFind);
