@@ -7,9 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Common.Model;
-using AsiriContext = Common.AsiriContext;
 
-namespace AsiriERP.Controllers.ProductoSerivicio
+namespace Asiri_ERP.Controllers.ProductoSerivicio
 {
     public class ServicioController : Controller
     {

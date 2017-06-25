@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\CodParam.cs" />
+    <Compile Include="Helper\CodSystem.cs" />
+    <Compile Include="Helper\Coin.cs" />
+    <Compile Include="Helper\NumExt.cs" />
+    <Compile Include="Helper\StringExt.cs" />
     <Compile Include="Model\AsiriContext.cs" />
     <Compile Include="Model\Clinica\CLIt01_anamnesis.cs" />
     <Compile Include="Model\Clinica\CLIt02_archivoEstudioCompl.cs" />

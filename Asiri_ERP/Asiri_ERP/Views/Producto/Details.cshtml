@@ -1,0 +1,139 @@
+﻿@model Common.PROt02_producto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PROt02_producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PROt01_categoria.nombreCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROt01_categoria.nombreCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SNTt03_moneda.codMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SNTt03_moneda.codMoneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codBarra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codBarra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreProductoGenerico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreProductoGenerico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreProductoComercial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreProductoComercial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.obsvProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.obsvProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecRegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecRegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecModificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecEliminacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecEliminacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idUsuarioModificar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUsuarioModificar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idUsuarioEliminar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUsuarioEliminar)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idProducto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
