@@ -7,7 +7,6 @@ using System.Data.Entity;
 using System.Data.Entity.Validation;
 using Common.Model;
 using NLog;
-using AsiriContext = Common.AsiriContext;
 
 namespace Persistence.Producto
 {

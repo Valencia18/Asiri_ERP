@@ -1,0 +1,64 @@
+﻿@helper Estado(bool estado)
+{
+if (!estado)
+{
+        <button type="button" class="btn btn-danger btn-flat">
+            <i class="fa fa-lg fa-thumbs-o-down"></i>
+        </button>
+}
+else
+{
+        <button type="button" class="btn btn-success btn-flat ">
+            <i class="fa fa-lg fa-thumbs-o-up"></i>
+        </button>
+}
+}
+@helper Ruta()
+{
+    string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    string action = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString();
+    <ul class="breadcrumb">
+        <li><i class="fa fa-home fa-lg"></i></li>
+        @if (!controller.IsEmpty())
+        {
+            <li>
+                <a href="/@controller">@controller</a>
+            </li>
+            if (!action.IsEmpty())
+            {
+                <li>
+                    <a href="/@controller/@action">
+                        @action
+                    </a>
+
+                </li>
+            }
+        }
+    </ul>
+}
+
+
+@helper Eliminar(bool estado, string ruta = "", long id=0)
+{
+if (estado==true)
+{
+        @*<button type="button" class="btn btn-danger btn-flat ">
+            <i class="fa fa-lg fa-trash"></i>
+        </button>*@
+        <a onclick="return confirm('¿Está seguro que desea Eliminar?')" href="@ruta/@id" class="btn btn-danger">
+            <i class="fa fa-lg fa-trash"></i>
+        </a>
+}
+else
+{
+        <a onclick="return confirm('¿Está seguro que desea Restablecer?')" href="@ruta/@id" class="btn btn-danger">
+            <i class="fa fa-lg fa-reply"></i>
+        </a>
+        @*<button type="button" class="btn btn-danger btn-flat">
+            <i class="fa fa-lg fa-reply"></i>
+        </button>*@
+
+
+}
+}
+

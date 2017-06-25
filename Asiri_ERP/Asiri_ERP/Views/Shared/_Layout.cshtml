@@ -1,45 +1,163 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <!--CSS-->
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+<body class="sidebar-mini fixed">
+
+<div class="wrapper">
+    <!-- Navbar-->
+    <header class="main-header hidden-print">
+        <a class="logo" href="index.html">Magic dent</a>
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button--><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
+            <!-- Navbar Right Menu-->
+            <div class="navbar-custom-menu">
+                <ul class="top-nav">
+                    <!--Notification Menu-->
+                    <li class="dropdown notification-menu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o fa-lg"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="not-head">You have 4 new notifications.</li>
+                            <li>
+                                <a class="media" href="javascript:;">
+                                    <span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                                    <div class="media-body"><span class="block">Lisa sent you a mail</span><span class="text-muted block">2min ago</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="media" href="javascript:;">
+                                    <span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                                    <div class="media-body"><span class="block">Server Not Working</span><span class="text-muted block">2min ago</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="media" href="javascript:;">
+                                    <span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                                    <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block">2min ago</span></div>
+                                </a>
+                            </li>
+                            <li class="not-footer"><a href="#">See all notifications.</a></li>
+                        </ul>
+                    </li>
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                            <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                            <li><a href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
+        </nav>
+    </header>
+    <!-- Side-Nav-->
+    <aside class="main-sidebar hidden-print">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>JuanJ</p>
+                    <p class="designation">Juan Jose</p>
+                </div>
+            </div>
+            <!-- Sidebar Menu-->
+            <ul class="sidebar-menu">
+                <li class="treeview"><a href="../layout.html"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
+
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-users"></i><span> Mant. Usuario</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="../Usuario/index.html"><i class="fa fa-user"></i>Usuario</a></li>
+                        <li><a href="../Perfiles/index.html"><i class="fa fa-user"></i>Perfiles</a></li>
+                        <li><a href="../Rol/index.html"><i class="fa fa-user"></i>Roles</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-user"></i><span>Mant. Empleado</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="@Url.Action("Index","Persona", new { parametro = 2})"><i class="fa fa-user"></i>Empleado</a></li>
+                        <li><a href="@Url.Action("Index","Persona")"><i class="fa fa-user"></i>Empleado</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Historial</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-edit"></i><span>Citas</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="form-componants.html"><i class="fa fa-circle-o"></i>Registrar Cita</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-user"></i><span>Empleado</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Registrar Empleado</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Registrar Asistencia</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                <a href="#"><i class="fa fa-file-text"></i><span>Servicios</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","Servicio")"><i class="fa fa-circle-o"></i> Servicios</a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","TipoServicio")"><i class="fa fa-circle-o"></i>Tipos de servicios</a></li>
+                </ul>
+
+                <li class="treeview">
+                <a href="#"><i class="fa fa-file-text"></i><span>Producto</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","CategoriaProducto")"><i class="fa fa-circle-o"></i>Categorías</a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","Producto")"><i class="fa fa-circle-o"></i>Productos</a></li>
+                </ul>
+
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-file-text"></i><span>Pagos</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Registrar Pagos</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        <footer style="text-align:center">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application SYSTEMS ENGINEER CICLO: VII</p>
         </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    </div>
+</div>
+
+
+    
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+<!--SCRIPTS DATATABLES-->
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/essential-plugins.js"></script>
+<script src="~/Scripts/Plugins/pace.min.js"></script>
+<script src="~/Scripts/main.js"></script>
+
+<!--PUSH-->
+<script src="~/Scripts/Push/push.min.js"></script>
 </body>
 </html>

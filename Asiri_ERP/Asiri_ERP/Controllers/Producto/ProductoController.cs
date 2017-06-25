@@ -6,11 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Common.Attribute;
 using Common.Helper;
 using Common.Model;
 using Service.Producto;
-using AsiriContext = Common.AsiriContext;
 
 namespace AsiriERP.Controllers.Producto
 {
