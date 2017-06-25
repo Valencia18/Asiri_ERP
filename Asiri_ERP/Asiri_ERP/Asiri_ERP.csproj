@@ -216,10 +216,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Producto\CategoriaProductoController.cs" />
-    <Compile Include="Controllers\Producto\ProductoController.cs" />
-    <Compile Include="Controllers\Servicio\ServicioController.cs" />
-    <Compile Include="Controllers\Servicio\TipoServicioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,7 +245,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="App_Code\Helpers\CustomHelper.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -304,13 +299,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Producto\Create.cshtml" />
-    <Content Include="Views\Producto\Delete.cshtml" />
-    <Content Include="Views\Producto\Details.cshtml" />
-    <Content Include="Views\Producto\Edit.cshtml" />
-    <Content Include="Views\Producto\Index.cshtml" />
-    <Content Include="Views\Producto\Modal\IndexModal_PartialPage.cshtml" />
-    <Content Include="Views\Producto\Modal\_CreateCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,16 +308,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{420C5402-5D34-4EC8-9294-2C4F70159FB3}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Service\Service.csproj">
-      <Project>{E3C95D12-08ED-427A-9C7E-AFF6FA816C98}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

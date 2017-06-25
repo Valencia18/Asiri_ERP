@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using Common.Model;
 using NLog;
+using AsiriContext = Common.AsiriContext;
 
 namespace Persistence.Producto
 {
